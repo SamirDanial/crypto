@@ -23,4 +23,10 @@ This is a crypto currency application built using React and Remix.
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/SamirDanial/crypto
+
+2. install dependencies
+
+   ```shell
+   cd crypto
+   npm install

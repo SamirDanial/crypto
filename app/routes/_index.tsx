@@ -43,9 +43,10 @@ export default function Index() {
   const { data } = useLoaderData();
   const [searchTerm, setSearchTerm] = useState('');
   const [searchData, setSearchData] = useState<cryptoItemsType>({ items: [] });
+  const [searchBy, setSearchBy] = useState('name')
 
   const filter = () => {
-    setSearchData({ items: data.filter((item: cryptoItemType) => item.name === searchTerm) });
+    setSearchData({ items: searchBy === 'name' ? data.filter((item: cryptoItemType) => item.name === searchTerm) :  data.filter((item: cryptoItemType) => item.symbol === searchTerm)});
   };
 
   const onDetailHandler = (name: string) => {
@@ -84,7 +85,7 @@ export default function Index() {
                   <p className="card-text">Current Price: {searchData.items[0]?.priceUsd}</p>
                   <p className="card-text">Volume used in 24 hours: {searchData.items[0]?.volumeUsd24Hr}</p>
                   <p className="card-text">Rank: {searchData.items[0]?.rank}</p>
-                  <p className="card-text">symbol: {searchData.items[0]?.symbol}</p>
+                  <p className="card-text">Code: {searchData.items[0]?.symbol}</p>
                   <p className="card-text">supply: {searchData.items[0]?.supply}</p>
                   <p className="card-text">marketCapUsd: {searchData.items[0]?.marketCapUsd}</p>
                   <p className="card-text">changePercent24Hr: {searchData.items[0]?.changePercent24Hr}</p>
@@ -98,7 +99,7 @@ export default function Index() {
         </div>
         <div className="flex justify-center items-center mb-4">
           <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="input w-64 mr-2" placeholder="Search..." />
-          <select className="select">
+          <select onChange={(e) => setSearchBy(e.target.value)} className="select">
             <option value="name">Name</option>
             <option value="code">Code</option>
           </select>
@@ -111,6 +112,7 @@ export default function Index() {
                 <div className="card" key={item.id}>
                   <div className="card-body">
                     <h2 className="card-title">{item.name}</h2>
+                    <p className="card-text">Code: {item.symbol}</p>
                     <p className="card-text">Current Price: {item.priceUsd}</p>
                     <p className="card-text">Volume used in 24 hours: {item.volumeUsd24Hr}</p>
                     <p className="card-text">Rank: {item.rank}</p>

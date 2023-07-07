@@ -30,3 +30,18 @@ This is a crypto currency application built using React and Remix.
    ```shell
    cd crypto
    npm install
+
+3. setup the database
+
+    ```shell
+    npx prisma db push
+
+4. run the application
+
+    ```shell
+    npm run dev
+
+note. if you want to see the database in browser run this command
+
+    ```shell
+    npx prisma studio

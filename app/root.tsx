@@ -37,3 +37,9 @@ export default function App() {
     </html>
   );
 }
+
+export function ErrorBoundary() {
+  return (
+    <h1>an unexpected behaviour has happened, please contanct support team.</h1>
+  )
+}

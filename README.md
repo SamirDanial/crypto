@@ -41,7 +41,7 @@ This is a crypto currency application built using React and Remix.
     ```shell
     npm run dev
 
-note. if you want to see the database in browser run this command
+5. if you want to see the database in browser run this command
 
     ```shell
     npx prisma studio

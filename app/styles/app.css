@@ -1450,6 +1450,10 @@ html {
   top: auto;
 }
 
+.left-\[50\%\] {
+  left: 50%;
+}
+
 .z-50 {
   z-index: 50;
 }
@@ -1523,6 +1527,16 @@ html {
 .bg-purple-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 232 255 / var(--tw-bg-opacity));
+}
+
+.bg-purple-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 132 252 / var(--tw-bg-opacity));
+}
+
+.bg-red-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }
 
 .bg-opacity-50 {

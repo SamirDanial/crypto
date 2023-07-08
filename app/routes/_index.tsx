@@ -76,7 +76,7 @@ export default function Index() {
           <input type='hidden' name="percentageChange" defaultValue={searchData.items[0]?.changePercent24Hr} />
         </Form>
         <div className="flex justify-center">
-          <div id='popup' className='absolute bg-purple-100 z-50 top-auto left-auto mt-[10%]'>
+          <div id='popup' className='fixed bg-purple-100 z-50 top-auto left-auto mt-[10%]'>
             {
               searchData && searchData.items && searchData.items.length > 0 &&
               <div className="card">
